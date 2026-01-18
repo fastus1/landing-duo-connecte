@@ -28,28 +28,6 @@
 <!-- ==================== HTML ==================== -->
 <div class="mlp-root">
 
-  <!-- Header Navigation -->
-  <header class="mlp-header" id="mlp-header">
-    <div class="mlp-container mlp-header-container">
-      <a href="#mlp-hero" class="mlp-header-brand">
-        <span class="mlp-header-title">AVANCER SIMPLEMENT</span>
-      </a>
-      <nav class="mlp-nav" aria-label="Navigation principale">
-        <a href="#mlp-how" class="mlp-nav-link">Comment ça marche</a>
-        <a href="#mlp-pricing" class="mlp-nav-link">Prix</a>
-        <a href="#mlp-faq" class="mlp-nav-link">FAQ</a>
-        <a href="https://communaute.avancersimplement.com/checkout/duo-connecte-v1" class="mlp-btn-primary mlp-nav-cta" target="_blank" rel="noopener noreferrer">Acheter</a>
-      </nav>
-      <button class="mlp-menu-toggle" aria-label="Menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </div>
-  </header>
-
   <!-- Section 1: Hero -->
   <section class="mlp-hero" id="mlp-hero">
     <div class="mlp-container">
@@ -185,33 +163,6 @@
         <p>Durée recommandée : 45 à 60 minutes, dans un endroit calme sans interruptions.</p>
       </div>
 
-      <!-- Mockups telephones -->
-      <div class="mlp-mockups">
-        <div class="mlp-mockup">
-          <img
-            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769342/duo-connecte/se-connecter-light.png"
-            alt="Ecran Se connecter de Duo-Connecte"
-            class="mlp-mockup-img mlp-img-light"
-          >
-          <img
-            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769344/duo-connecte/se-connecter-dark.png"
-            alt="Ecran Se connecter de Duo-Connecte"
-            class="mlp-mockup-img mlp-img-dark"
-          >
-        </div>
-        <div class="mlp-mockup">
-          <img
-            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769345/duo-connecte/definir-roles-light.png"
-            alt="Ecran Definir les roles de Duo-Connecte"
-            class="mlp-mockup-img mlp-img-light"
-          >
-          <img
-            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769346/duo-connecte/definir-roles-dark.png"
-            alt="Ecran Definir les roles de Duo-Connecte"
-            class="mlp-mockup-img mlp-img-dark"
-          >
-        </div>
-      </div>
     </div>
   </section>
 
@@ -968,7 +919,7 @@
   /* ===== SECTION 1: HERO ===== */
   .mlp-hero {
     position: relative;
-    padding: calc(var(--mlp-spacing-16) + 64px) 0 var(--mlp-spacing-12);
+    padding: var(--mlp-spacing-16) 0 var(--mlp-spacing-12);
     background-image: url('https://res.cloudinary.com/dxhn08di4/image/upload/v1768769350/duo-connecte/hero-couple.jpg');
     background-size: cover;
     background-position: center;
@@ -1662,7 +1613,7 @@
 
     /* Hero */
     .mlp-hero {
-      padding: calc(var(--mlp-spacing-20) + 64px) 0 var(--mlp-spacing-16);
+      padding: var(--mlp-spacing-20) 0 var(--mlp-spacing-16);
     }
 
     /* Overlay gradient pour tablette/desktop - moins opaque à droite */
