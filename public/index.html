@@ -231,7 +231,7 @@
       <p class="mlp-section-subtitle">Utilisez Duo-Connecte où que vous soyez, sur l'appareil de votre choix</p>
 
       <div class="mlp-devices-grid">
-        <div class="mlp-device-item mlp-device-tablet">
+        <div class="mlp-device-item mlp-device-tablet" data-animate>
           <img
             src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769347/duo-connecte/mockup-tablette-clair.png"
             alt="Duo-Connecte sur tablette"
@@ -244,7 +244,7 @@
           >
           <p class="mlp-device-label">Tablette</p>
         </div>
-        <div class="mlp-device-item mlp-device-computer">
+        <div class="mlp-device-item mlp-device-computer" data-animate>
           <img
             src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769348/duo-connecte/mockup-ordinateur-clair.png"
             alt="Duo-Connecte sur ordinateur"
@@ -256,6 +256,19 @@
             class="mlp-device-image mlp-img-dark"
           >
           <p class="mlp-device-label">Ordinateur</p>
+        </div>
+        <div class="mlp-device-item mlp-device-smartphone" data-animate>
+          <img
+            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769340/duo-connecte/mockup-smartphone-clair.png"
+            alt="Duo-Connecte sur smartphone"
+            class="mlp-device-image mlp-img-light"
+          >
+          <img
+            src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769341/duo-connecte/mockup-smartphone-sombre.png"
+            alt="Duo-Connecte sur smartphone"
+            class="mlp-device-image mlp-img-dark"
+          >
+          <p class="mlp-device-label">Smartphone</p>
         </div>
       </div>
     </div>
@@ -1251,33 +1264,48 @@
   }
 
   .mlp-devices-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--mlp-spacing-8);
-    justify-items: center;
   }
 
   .mlp-device-item {
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
+
+  .mlp-device-item.mlp-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mlp-device-item:nth-child(1) { transition-delay: 0s; }
+  .mlp-device-item:nth-child(2) { transition-delay: 0.15s; }
+  .mlp-device-item:nth-child(3) { transition-delay: 0.3s; }
 
   .mlp-device-image {
     width: 100%;
-    max-width: 350px;
     height: auto;
-    /* Pas de border-radius car le mockup inclut déjà le cadre de l'appareil */
     transition: transform var(--mlp-transition-base);
   }
 
+  .mlp-device-tablet .mlp-device-image { max-width: 280px; }
+  .mlp-device-computer .mlp-device-image { max-width: 400px; }
+  .mlp-device-smartphone .mlp-device-image { max-width: 180px; }
+
   .mlp-device-item:hover .mlp-device-image {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 
   .mlp-device-label {
-    margin-top: var(--mlp-spacing-3);
-    font-size: var(--mlp-text-base);
+    margin-top: var(--mlp-spacing-4);
+    font-size: var(--mlp-text-lg);
     font-weight: 600;
     color: var(--mlp-text-primary);
+    letter-spacing: 0.02em;
   }
 
   /* ===== SECTION 5: A QUI S'ADRESSE ===== */
@@ -1679,13 +1707,19 @@
 
     /* Multi-appareils */
     .mlp-devices-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--mlp-spacing-12);
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      gap: var(--mlp-spacing-8);
     }
 
-    .mlp-device-image {
-      max-width: 450px;
-    }
+    .mlp-device-tablet { order: 1; }
+    .mlp-device-computer { order: 2; }
+    .mlp-device-smartphone { order: 3; }
+
+    .mlp-device-tablet .mlp-device-image { max-width: 320px; }
+    .mlp-device-computer .mlp-device-image { max-width: 480px; }
+    .mlp-device-smartphone .mlp-device-image { max-width: 200px; }
 
     /* Audience */
     .mlp-audience-grid {
@@ -1766,6 +1800,7 @@
     setupFAQ();
     setupSmoothScroll();
     setupMobileMenu();
+    setupScrollAnimations();
   }
 
   // ===== MOBILE MENU =====
@@ -1846,6 +1881,34 @@
         }
       });
     });
+  }
+
+  // ===== SCROLL ANIMATIONS =====
+  function setupScrollAnimations() {
+    var animatedElements = document.querySelectorAll('[data-animate]');
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mlp-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      animatedElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback pour les navigateurs sans IntersectionObserver
+      animatedElements.forEach(function(el) {
+        el.classList.add('mlp-visible');
+      });
+    }
   }
 
 })();
