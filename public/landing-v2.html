@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,7 +70,7 @@
       font-family: 'Raleway', system-ui, sans-serif;
     }
 
-    /* Smooth transitions for dark mode */
+    /* Smooth transitions */
     * {
       transition-property: background-color, border-color;
       transition-duration: 200ms;
@@ -145,13 +145,6 @@
     /* Hero background gradient overlay */
     .hero-overlay {
       background: linear-gradient(135deg,
-        rgba(7, 68, 145, 0.92) 0%,
-        rgba(7, 68, 145, 0.75) 50%,
-        rgba(7, 68, 145, 0.6) 100%);
-    }
-
-    .dark .hero-overlay {
-      background: linear-gradient(135deg,
         rgba(15, 23, 42, 0.95) 0%,
         rgba(15, 23, 42, 0.85) 50%,
         rgba(15, 23, 42, 0.75) 100%);
@@ -159,13 +152,6 @@
 
     /* Soft card style */
     .card-soft {
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1),
-                  0 2px 8px -2px rgba(0, 0, 0, 0.06);
-    }
-
-    .dark .card-soft {
       background: #1E293B;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.4),
@@ -180,12 +166,8 @@
       left: 50%;
       width: calc(100% + 2rem);
       height: 2px;
-      background: linear-gradient(90deg, #074491 0%, #3085F5 100%);
-      opacity: 0.3;
-    }
-
-    .dark .step-connector::after {
       background: linear-gradient(90deg, #3085F5 0%, #70B5FF 100%);
+      opacity: 0.3;
     }
 
     @media (max-width: 1023px) {
@@ -196,12 +178,7 @@
   </style>
 </head>
 
-<body class="bg-surface-light dark:bg-surface-darker text-slate-800 dark:text-slate-100 font-body antialiased">
-
-  <!-- TEMP: Theme Switch (display:none pour cacher) -->
-  <button id="theme-switch" class="hidden fixed top-4 right-4 z-50 bg-slate-800 dark:bg-white text-white dark:text-slate-800 px-4 py-2 rounded-lg shadow-lg font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">
-    🌙 Dark
-  </button>
+<body class="bg-surface-darker text-slate-100 font-body antialiased">
 
   <!-- ==================== HERO ==================== -->
   <section class="relative min-h-screen flex items-center overflow-hidden">
@@ -274,14 +251,9 @@
           <div class="relative">
             <div class="animate-float">
               <img
-                src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769340/duo-connecte/mockup-smartphone-clair.png"
-                alt="Application Duo-Connecte sur smartphone"
-                class="w-72 xl:w-80 dark:hidden"
-              >
-              <img
                 src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769341/duo-connecte/mockup-smartphone-sombre.png"
                 alt="Application Duo-Connecte sur smartphone"
-                class="w-72 xl:w-80 hidden dark:block"
+                class="w-72 xl:w-80"
               >
             </div>
             <!-- Decorative elements -->
@@ -301,13 +273,13 @@
   </section>
 
   <!-- ==================== PROBLEME / SOLUTION ==================== -->
-  <section class="py-20 lg:py-28 bg-surface-light dark:bg-surface-darker">
+  <section class="py-20 lg:py-28 bg-surface-darker">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Une nouvelle approche de la communication
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Transformez les moments de tension en opportunités de connexion
         </p>
       </div>
@@ -316,67 +288,67 @@
         <!-- Problem Card -->
         <div class="card-soft rounded-2xl p-8 lg:p-10 reveal">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl bg-amber-200 dark:bg-amber-900/30 flex items-center justify-center">
-              <svg class="w-7 h-7 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-14 h-14 rounded-xl bg-amber-900/30 flex items-center justify-center">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
             </div>
-            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Le problème</h3>
+            <h3 class="font-heading text-2xl font-bold text-white">Le problème</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
-              <span class="text-slate-800 dark:text-slate-300">Les conversations importantes tournent souvent mal</span>
+              <span class="text-slate-300">Les conversations importantes tournent souvent mal</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
-              <span class="text-slate-800 dark:text-slate-300">On tombe dans des automatismes : défense, attaque, justification</span>
+              <span class="text-slate-300">On tombe dans des automatismes : défense, attaque, justification</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
-              <span class="text-slate-800 dark:text-slate-300">On veut avoir raison plutôt que se comprendre</span>
+              <span class="text-slate-300">On veut avoir raison plutôt que se comprendre</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
-              <span class="text-slate-800 dark:text-slate-300">Les non-dits s'accumulent et créent de la distance</span>
+              <span class="text-slate-300">Les non-dits s'accumulent et créent de la distance</span>
             </li>
           </ul>
         </div>
 
         <!-- Solution Card -->
-        <div class="card-soft rounded-2xl p-8 lg:p-10 border-2 border-brand-500/20 dark:border-brand-400/20 reveal animation-delay-200">
+        <div class="card-soft rounded-2xl p-8 lg:p-10 border-2 border-brand-400/20 reveal animation-delay-200">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center">
-              <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-14 h-14 rounded-xl bg-emerald-900/30 flex items-center justify-center">
+              <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">La solution</h3>
+            <h3 class="font-heading text-2xl font-bold text-white">La solution</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Duo-Connecte offre une structure claire qui guide la conversation</span>
+              <span class="text-slate-300">Duo-Connecte offre une structure claire qui guide la conversation</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Chaque étape a un objectif précis et mesurable</span>
+              <span class="text-slate-300">Chaque étape a un objectif précis et mesurable</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">L'application aide à ralentir, sortir des automatismes, et vraiment s'écouter</span>
+              <span class="text-slate-300">L'application aide à ralentir, sortir des automatismes, et vraiment s'écouter</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Les deux perspectives sont validées et entendues</span>
+              <span class="text-slate-300">Les deux perspectives sont validées et entendues</span>
             </li>
           </ul>
         </div>
@@ -385,13 +357,13 @@
   </section>
 
   <!-- ==================== COMMENT CA MARCHE ==================== -->
-  <section id="comment-ca-marche" class="py-20 lg:py-28 bg-white dark:bg-surface-dark">
+  <section id="comment-ca-marche" class="py-20 lg:py-28 bg-surface-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Comment ça fonctionne
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Un processus simple en 5 étapes pour des conversations constructives
         </p>
       </div>
@@ -400,60 +372,60 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 mb-12">
         <!-- Step 1 -->
         <div class="relative text-center reveal step-connector">
-          <div class="w-12 h-12 rounded-full bg-brand-500 dark:bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
             1
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Définir vos rôles</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Qui partage son vécu en premier, qui écoute</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Définir vos rôles</h3>
+          <p class="text-sm text-slate-400">Qui partage son vécu en premier, qui écoute</p>
         </div>
 
         <!-- Step 2 -->
         <div class="relative text-center reveal animation-delay-200 step-connector">
-          <div class="w-12 h-12 rounded-full bg-brand-500 dark:bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
             2
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">S'exprimer pleinement</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Partager votre perspective sans accusation</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">S'exprimer pleinement</h3>
+          <p class="text-sm text-slate-400">Partager votre perspective sans accusation</p>
         </div>
 
         <!-- Step 3 -->
         <div class="relative text-center reveal animation-delay-400 step-connector">
-          <div class="w-12 h-12 rounded-full bg-brand-500 dark:bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
             3
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Écouter avec bienveillance</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Comprendre le vécu de l'autre</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Écouter avec bienveillance</h3>
+          <p class="text-sm text-slate-400">Comprendre le vécu de l'autre</p>
         </div>
 
         <!-- Step 4 -->
         <div class="relative text-center reveal animation-delay-600 step-connector">
-          <div class="w-12 h-12 rounded-full bg-brand-500 dark:bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
             4
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Identifier vos besoins</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Trouver comment vous occuper de vous</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Identifier vos besoins</h3>
+          <p class="text-sm text-slate-400">Trouver comment vous occuper de vous</p>
         </div>
 
         <!-- Step 5 -->
         <div class="relative text-center reveal">
-          <div class="w-12 h-12 rounded-full bg-brand-500 dark:bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
+          <div class="w-12 h-12 rounded-full bg-brand-400 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10">
             5
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Se reconnecter</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Trouver un terrain commun</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Se reconnecter</h3>
+          <p class="text-sm text-slate-400">Trouver un terrain commun</p>
         </div>
       </div>
 
       <!-- Duration Note -->
       <div class="max-w-2xl mx-auto reveal">
         <div class="card-soft rounded-xl p-6 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-brand-200 dark:bg-brand-900/30 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-brand-500 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-12 h-12 rounded-lg bg-brand-900/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <p class="text-slate-800 dark:text-slate-300">
-            <strong class="text-slate-900 dark:text-white">Durée recommandée :</strong> 45 à 60 minutes, dans un endroit calme sans interruptions.
+          <p class="text-slate-300">
+            <strong class="text-white">Durée recommandée :</strong> 45 à 60 minutes, dans un endroit calme sans interruptions.
           </p>
         </div>
       </div>
@@ -461,13 +433,13 @@
   </section>
 
   <!-- ==================== BENEFICES ==================== -->
-  <section class="py-20 lg:py-28 bg-surface-light dark:bg-surface-darker">
+  <section class="py-20 lg:py-28 bg-surface-darker">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Pourquoi ça fonctionne
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Des principes éprouvés pour une communication bienveillante
         </p>
       </div>
@@ -475,59 +447,59 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Benefit 1 -->
         <div class="card-soft rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer reveal">
-          <div class="w-14 h-14 rounded-xl bg-brand-200 dark:bg-brand-900/30 flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-brand-500 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-14 h-14 rounded-xl bg-brand-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
             </svg>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Structure guidée</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Chaque étape vous garde sur la bonne voie</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Structure guidée</h3>
+          <p class="text-sm text-slate-400">Chaque étape vous garde sur la bonne voie</p>
         </div>
 
         <!-- Benefit 2 -->
         <div class="card-soft rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer reveal animation-delay-200">
-          <div class="w-14 h-14 rounded-xl bg-purple-200 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-14 h-14 rounded-xl bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Moins de réactivité</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Le format ralentit les automatismes de défense</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Moins de réactivité</h3>
+          <p class="text-sm text-slate-400">Le format ralentit les automatismes de défense</p>
         </div>
 
         <!-- Benefit 3 -->
         <div class="card-soft rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer reveal animation-delay-400">
-          <div class="w-14 h-14 rounded-xl bg-teal-200 dark:bg-teal-900/30 flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-teal-500 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-14 h-14 rounded-xl bg-teal-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Deux perspectives validées</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Vos deux vérités peuvent coexister</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Deux perspectives validées</h3>
+          <p class="text-sm text-slate-400">Vos deux vérités peuvent coexister</p>
         </div>
 
         <!-- Benefit 4 -->
         <div class="card-soft rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer reveal animation-delay-600">
-          <div class="w-14 h-14 rounded-xl bg-rose-200 dark:bg-rose-900/30 flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-rose-500 dark:text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-14 h-14 rounded-xl bg-rose-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white mb-2">Applicable immédiatement</h3>
-          <p class="text-sm text-slate-800 dark:text-slate-400">Utilisable dès qu'une conversation importante se présente</p>
+          <h3 class="font-heading text-lg font-semibold text-white mb-2">Applicable immédiatement</h3>
+          <p class="text-sm text-slate-400">Utilisable dès qu'une conversation importante se présente</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== MULTI-APPAREILS ==================== -->
-  <section class="py-20 lg:py-28 bg-gradient-to-b from-surface-light to-white dark:from-surface-darker dark:to-surface-dark overflow-hidden">
+  <section class="py-20 lg:py-28 bg-gradient-to-b from-surface-darker to-surface-dark overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Accessible sur tous vos appareils
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Utilisez Duo-Connecte où que vous soyez, sur l'appareil de votre choix
         </p>
       </div>
@@ -538,64 +510,49 @@
         <div class="text-center reveal">
           <div class="relative">
             <img
-              src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769347/duo-connecte/mockup-tablette-clair.png"
-              alt="Duo-Connecte sur tablette"
-              class="w-64 lg:w-72 mx-auto dark:hidden hover:scale-105 transition-transform duration-300"
-            >
-            <img
               src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769348/duo-connecte/mockup-tablette-sombre.png"
               alt="Duo-Connecte sur tablette"
-              class="w-64 lg:w-72 mx-auto hidden dark:block hover:scale-105 transition-transform duration-300"
+              class="w-64 lg:w-72 mx-auto hover:scale-105 transition-transform duration-300"
             >
           </div>
-          <p class="mt-4 font-medium text-slate-800 dark:text-slate-300">Tablette</p>
+          <p class="mt-4 font-medium text-slate-300">Tablette</p>
         </div>
 
         <!-- Computer (larger, center) -->
         <div class="text-center reveal animation-delay-200 order-first lg:order-none">
           <div class="relative">
             <img
-              src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769348/duo-connecte/mockup-ordinateur-clair.png"
-              alt="Duo-Connecte sur ordinateur"
-              class="w-80 lg:w-[28rem] mx-auto dark:hidden hover:scale-105 transition-transform duration-300"
-            >
-            <img
               src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769349/duo-connecte/mockup-ordinateur-sombre.png"
               alt="Duo-Connecte sur ordinateur"
-              class="w-80 lg:w-[28rem] mx-auto hidden dark:block hover:scale-105 transition-transform duration-300"
+              class="w-80 lg:w-[28rem] mx-auto hover:scale-105 transition-transform duration-300"
             >
           </div>
-          <p class="mt-4 font-medium text-slate-800 dark:text-slate-300">Ordinateur</p>
+          <p class="mt-4 font-medium text-slate-300">Ordinateur</p>
         </div>
 
         <!-- Smartphone -->
         <div class="text-center reveal animation-delay-400">
           <div class="relative">
             <img
-              src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769340/duo-connecte/mockup-smartphone-clair.png"
-              alt="Duo-Connecte sur smartphone"
-              class="w-40 lg:w-48 mx-auto dark:hidden hover:scale-105 transition-transform duration-300"
-            >
-            <img
               src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769341/duo-connecte/mockup-smartphone-sombre.png"
               alt="Duo-Connecte sur smartphone"
-              class="w-40 lg:w-48 mx-auto hidden dark:block hover:scale-105 transition-transform duration-300"
+              class="w-40 lg:w-48 mx-auto hover:scale-105 transition-transform duration-300"
             >
           </div>
-          <p class="mt-4 font-medium text-slate-800 dark:text-slate-300">Smartphone</p>
+          <p class="mt-4 font-medium text-slate-300">Smartphone</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== A QUI S'ADRESSE ==================== -->
-  <section class="py-20 lg:py-28 bg-surface-light dark:bg-surface-darker">
+  <section class="py-20 lg:py-28 bg-surface-darker">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           À qui s'adresse Duo-Connecte
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Un outil pensé pour des situations spécifiques
         </p>
       </div>
@@ -604,37 +561,37 @@
         <!-- Ideal situations -->
         <div class="card-soft rounded-2xl p-8 reveal">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-lg bg-emerald-900/30 flex items-center justify-center">
+              <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
             </div>
-            <h3 class="font-heading text-xl font-semibold text-slate-900 dark:text-white">Situations idéales</h3>
+            <h3 class="font-heading text-xl font-semibold text-white">Situations idéales</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un malentendu qui traîne depuis plusieurs jours</span>
+              <span class="text-slate-300">Un malentendu qui traîne depuis plusieurs jours</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un non-dit que vous n'arrivez pas à nommer</span>
+              <span class="text-slate-300">Un non-dit que vous n'arrivez pas à nommer</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un sujet délicat que vous évitez d'aborder</span>
+              <span class="text-slate-300">Un sujet délicat que vous évitez d'aborder</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un moment où vous sentez que la connexion s'est perdue</span>
+              <span class="text-slate-300">Un moment où vous sentez que la connexion s'est perdue</span>
             </li>
           </ul>
         </div>
@@ -642,37 +599,37 @@
         <!-- What it's NOT -->
         <div class="card-soft rounded-2xl p-8 reveal animation-delay-200">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-lg bg-amber-200 dark:bg-amber-900/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 rounded-lg bg-amber-900/30 flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
             </div>
-            <h3 class="font-heading text-xl font-semibold text-slate-900 dark:text-white">Ce que ce n'est PAS</h3>
+            <h3 class="font-heading text-xl font-semibold text-white">Ce que ce n'est PAS</h3>
           </div>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un substitut à une thérapie de couple</span>
+              <span class="text-slate-300">Un substitut à une thérapie de couple</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un outil de gestion de crise (si l'émotion est trop forte, attendre)</span>
+              <span class="text-slate-300">Un outil de gestion de crise (si l'émotion est trop forte, attendre)</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Une solution miracle instantanée</span>
+              <span class="text-slate-300">Une solution miracle instantanée</span>
             </li>
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
               </svg>
-              <span class="text-slate-800 dark:text-slate-300">Un outil de médiation professionnelle</span>
+              <span class="text-slate-300">Un outil de médiation professionnelle</span>
             </li>
           </ul>
         </div>
@@ -681,65 +638,65 @@
   </section>
 
   <!-- ==================== PRIX ==================== -->
-  <section id="prix" class="py-20 lg:py-28 bg-surface-light dark:bg-surface-darker">
+  <section id="prix" class="py-20 lg:py-28 bg-surface-darker">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Un investissement dans votre relation
         </h2>
-        <p class="text-lg text-slate-800 dark:text-slate-300 max-w-2xl mx-auto">
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Paiement unique, accès illimité
         </p>
       </div>
 
       <div class="max-w-lg mx-auto reveal">
-        <div class="card-soft rounded-3xl p-8 lg:p-10 border-2 border-brand-500 dark:border-brand-400 relative overflow-hidden">
+        <div class="card-soft rounded-3xl p-8 lg:p-10 border-2 border-brand-400 relative overflow-hidden">
           <!-- Badge -->
-          <div class="absolute top-0 right-0 bg-brand-500 dark:bg-brand-400 text-white text-sm font-medium px-4 py-1 rounded-bl-xl">
+          <div class="absolute top-0 right-0 bg-brand-400 text-white text-sm font-medium px-4 py-1 rounded-bl-xl">
             Accès à vie
           </div>
 
           <div class="text-center mb-8">
-            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-4">Duo-Connecte</h3>
+            <h3 class="font-heading text-2xl font-bold text-white mb-4">Duo-Connecte</h3>
             <div class="flex items-baseline justify-center gap-2">
-              <span class="text-5xl lg:text-6xl font-bold text-brand-500 dark:text-brand-400">50$</span>
-              <span class="text-xl text-slate-600 dark:text-slate-400">CAD</span>
+              <span class="text-5xl lg:text-6xl font-bold text-brand-400">50$</span>
+              <span class="text-xl text-slate-400">CAD</span>
             </div>
-            <p class="text-slate-800 dark:text-slate-400 mt-2">Paiement unique</p>
+            <p class="text-slate-400 mt-2">Paiement unique</p>
           </div>
 
           <ul class="space-y-4 mb-8">
             <li class="flex items-center gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-6 h-6 rounded-full bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
-              <span class="text-slate-800 dark:text-slate-300">Accès complet à l'application</span>
+              <span class="text-slate-300">Accès complet à l'application</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-6 h-6 rounded-full bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
-              <span class="text-slate-800 dark:text-slate-300">Utilisable autant de fois que nécessaire</span>
+              <span class="text-slate-300">Utilisable autant de fois que nécessaire</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-6 h-6 rounded-full bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
-              <span class="text-slate-800 dark:text-slate-300">Aucun abonnement</span>
+              <span class="text-slate-300">Aucun abonnement</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="w-6 h-6 rounded-full bg-emerald-200 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-6 h-6 rounded-full bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
-              <span class="text-slate-800 dark:text-slate-300">Garantie satisfait ou remboursé 30 jours</span>
+              <span class="text-slate-300">Garantie satisfait ou remboursé 30 jours</span>
             </li>
           </ul>
 
@@ -747,12 +704,12 @@
             href="https://communaute.avancersimplement.com/checkout/duo-connecte-v1"
             target="_blank"
             rel="noopener noreferrer"
-            class="block w-full py-4 px-6 bg-brand-500 hover:bg-brand-600 dark:bg-brand-400 dark:hover:bg-brand-300 text-white dark:text-slate-900 font-semibold text-center rounded-xl transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-500/30 focus-visible:outline-none cursor-pointer hover:-translate-y-0.5 shadow-soft hover:shadow-soft-lg"
+            class="block w-full py-4 px-6 bg-brand-400 hover:bg-brand-300 text-slate-900 font-semibold text-center rounded-xl transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-500/30 focus-visible:outline-none cursor-pointer hover:-translate-y-0.5 shadow-soft hover:shadow-soft-lg"
           >
             Acheter Duo-Connecte
           </a>
 
-          <p class="text-center text-sm text-slate-600 dark:text-slate-400 mt-4 flex items-center justify-center gap-2">
+          <p class="text-center text-sm text-slate-400 mt-4 flex items-center justify-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
             </svg>
@@ -764,16 +721,16 @@
   </section>
 
   <!-- ==================== A PROPOS ==================== -->
-  <section class="py-20 lg:py-28 bg-white dark:bg-surface-dark">
+  <section class="py-20 lg:py-28 bg-surface-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-6">
           Créé par des thérapeutes, pour les couples
         </h2>
 
-        <div class="space-y-6 text-lg text-slate-800 dark:text-slate-300 leading-relaxed">
+        <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
           <p>
-            Duo-Connecte a été développé par <strong class="text-slate-900 dark:text-white">Yannick Delorme</strong> et <strong class="text-slate-900 dark:text-white">Diane Lapensée</strong>, deux thérapeutes en relation d'aide de Gatineau.
+            Duo-Connecte a été développé par <strong class="text-white">Yannick Delorme</strong> et <strong class="text-white">Diane Lapensée</strong>, deux thérapeutes en relation d'aide de Gatineau.
           </p>
           <p>
             Ensemble, ils cumulent près de 50 ans d'expérience personnelle et professionnelle en thérapie individuelle et de couple, ainsi que dans les domaines du développement personnel et de la psychologie.
@@ -787,7 +744,7 @@
           href="https://www.avancersimplement.com/contact/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 mt-8 text-brand-500 dark:text-brand-400 font-semibold hover:text-brand-600 dark:hover:text-brand-300 transition-colors cursor-pointer"
+          class="inline-flex items-center gap-2 mt-8 text-brand-400 font-semibold hover:text-brand-300 transition-colors cursor-pointer"
         >
           En savoir plus sur Avancer Simplement
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -799,10 +756,10 @@
   </section>
 
   <!-- ==================== FAQ ==================== -->
-  <section class="py-20 lg:py-28 bg-surface-light dark:bg-surface-darker">
+  <section class="py-20 lg:py-28 bg-surface-darker">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
           Questions fréquentes
         </h2>
       </div>
@@ -811,11 +768,11 @@
         <!-- FAQ Item 1 -->
         <div class="faq-item card-soft rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:outline-none" aria-expanded="false">
-            <span class="font-semibold text-slate-900 dark:text-white">Combien de temps dure un parcours ?</span>
-            <span class="faq-icon text-brand-500 dark:text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
+            <span class="font-semibold text-white">Combien de temps dure un parcours ?</span>
+            <span class="faq-icon text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
           </button>
           <div class="faq-answer">
-            <p class="px-6 pb-5 text-slate-800 dark:text-slate-300">
+            <p class="px-6 pb-5 text-slate-300">
               Environ 45 à 60 minutes. Prévoyez un moment calme sans interruptions.
             </p>
           </div>
@@ -824,11 +781,11 @@
         <!-- FAQ Item 2 -->
         <div class="faq-item card-soft rounded-xl overflow-hidden reveal animation-delay-200">
           <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:outline-none" aria-expanded="false">
-            <span class="font-semibold text-slate-900 dark:text-white">Faut-il des compétences particulières ?</span>
-            <span class="faq-icon text-brand-500 dark:text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
+            <span class="font-semibold text-white">Faut-il des compétences particulières ?</span>
+            <span class="faq-icon text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
           </button>
           <div class="faq-answer">
-            <p class="px-6 pb-5 text-slate-800 dark:text-slate-300">
+            <p class="px-6 pb-5 text-slate-300">
               Des bases en communication aident : identifier vos émotions, écouter sans interrompre, accepter que l'autre voit les choses différemment.
             </p>
           </div>
@@ -837,11 +794,11 @@
         <!-- FAQ Item 3 -->
         <div class="faq-item card-soft rounded-xl overflow-hidden reveal animation-delay-400">
           <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:outline-none" aria-expanded="false">
-            <span class="font-semibold text-slate-900 dark:text-white">Peut-on utiliser Duo-Connecte plusieurs fois ?</span>
-            <span class="faq-icon text-brand-500 dark:text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
+            <span class="font-semibold text-white">Peut-on utiliser Duo-Connecte plusieurs fois ?</span>
+            <span class="faq-icon text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
           </button>
           <div class="faq-answer">
-            <p class="px-6 pb-5 text-slate-800 dark:text-slate-300">
+            <p class="px-6 pb-5 text-slate-300">
               Oui, autant de fois que nécessaire. Chaque conversation difficile peut bénéficier de la structure guidée.
             </p>
           </div>
@@ -850,11 +807,11 @@
         <!-- FAQ Item 4 -->
         <div class="faq-item card-soft rounded-xl overflow-hidden reveal">
           <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:outline-none" aria-expanded="false">
-            <span class="font-semibold text-slate-900 dark:text-white">Est-ce que ça remplace une thérapie de couple ?</span>
-            <span class="faq-icon text-brand-500 dark:text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
+            <span class="font-semibold text-white">Est-ce que ça remplace une thérapie de couple ?</span>
+            <span class="faq-icon text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
           </button>
           <div class="faq-answer">
-            <p class="px-6 pb-5 text-slate-800 dark:text-slate-300">
+            <p class="px-6 pb-5 text-slate-300">
               Non. Duo-Connecte est un outil d'accompagnement pour des conversations ponctuelles, pas un suivi thérapeutique.
             </p>
           </div>
@@ -863,11 +820,11 @@
         <!-- FAQ Item 5 -->
         <div class="faq-item card-soft rounded-xl overflow-hidden reveal animation-delay-200">
           <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:outline-none" aria-expanded="false">
-            <span class="font-semibold text-slate-900 dark:text-white">Mes données sont-elles collectées ?</span>
-            <span class="faq-icon text-brand-500 dark:text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
+            <span class="font-semibold text-white">Mes données sont-elles collectées ?</span>
+            <span class="faq-icon text-brand-400 text-2xl font-light transition-transform duration-300 flex-shrink-0">+</span>
           </button>
           <div class="faq-answer">
-            <p class="px-6 pb-5 text-slate-800 dark:text-slate-300">
+            <p class="px-6 pb-5 text-slate-300">
               Non. Aucune donnée personnelle n'est collectée. Vos conversations restent privées.
             </p>
           </div>
@@ -877,7 +834,7 @@
   </section>
 
   <!-- ==================== CTA FINAL ==================== -->
-  <section class="py-20 lg:py-28 bg-gradient-to-br from-brand-500 to-brand-600 dark:from-brand-400 dark:to-brand-500 relative overflow-hidden">
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-brand-400 to-brand-500 relative overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
@@ -903,7 +860,7 @@
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="py-12 bg-slate-900 dark:bg-black text-white">
+  <footer class="py-12 bg-black text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
         <!-- Brand -->
@@ -936,141 +893,6 @@
   <script>
     (function() {
       'use strict';
-
-      // Dark mode detection for Circle.so embedding
-      function initDarkMode() {
-        function setDarkMode(isDark) {
-          if (isDark) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        }
-
-        function detectCircleTheme() {
-          // Method 1: Check if embedded in Circle.so iframe
-          try {
-            // Circle.so adds data-theme attribute or dark class to their page
-            if (window.parent && window.parent !== window) {
-              // Check parent document (if same origin)
-              try {
-                const parentHtml = window.parent.document.documentElement;
-                const parentBody = window.parent.document.body;
-
-                // Check for dark class
-                if (parentHtml.classList.contains('dark') || parentBody.classList.contains('dark')) {
-                  return true;
-                }
-                // Check for data-theme attribute
-                if (parentHtml.getAttribute('data-theme') === 'dark' || parentBody.getAttribute('data-theme') === 'dark') {
-                  return true;
-                }
-                // Check for data-color-mode attribute (common in Circle.so)
-                if (parentHtml.getAttribute('data-color-mode') === 'dark' || parentBody.getAttribute('data-color-mode') === 'dark') {
-                  return true;
-                }
-                // Check computed background color of parent body
-                const parentBgColor = window.getComputedStyle(parentBody).backgroundColor;
-                if (parentBgColor) {
-                  // Parse RGB values
-                  const match = parentBgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-                  if (match) {
-                    const r = parseInt(match[1]);
-                    const g = parseInt(match[2]);
-                    const b = parseInt(match[3]);
-                    // Calculate luminance - dark if below threshold
-                    const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
-                    if (luminance < 128) {
-                      return true;
-                    }
-                  }
-                }
-                return false;
-              } catch (e) {
-                // Cross-origin - can't access parent
-              }
-            }
-          } catch (e) {
-            // Not in iframe or security error
-          }
-
-          // Method 2: Check URL parameters (Circle.so might pass theme via URL)
-          const urlParams = new URLSearchParams(window.location.search);
-          if (urlParams.get('theme') === 'dark' || urlParams.get('dark') === 'true') {
-            return true;
-          }
-
-          // Method 3: Check for Circle.so specific elements or variables
-          if (typeof window.circleUser !== 'undefined' && window.circleUser.theme === 'dark') {
-            return true;
-          }
-
-          // Method 4: Fallback to system preference
-          return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }
-
-        // Initial detection
-        setDarkMode(detectCircleTheme());
-
-        // Watch for parent document changes (if accessible)
-        try {
-          if (window.parent && window.parent !== window) {
-            try {
-              const parentHtml = window.parent.document.documentElement;
-              const parentBody = window.parent.document.body;
-
-              // Observer for class and attribute changes on parent
-              const observer = new MutationObserver(() => {
-                setDarkMode(detectCircleTheme());
-              });
-
-              observer.observe(parentHtml, { attributes: true, attributeFilter: ['class', 'data-theme', 'data-color-mode'] });
-              observer.observe(parentBody, { attributes: true, attributeFilter: ['class', 'data-theme', 'data-color-mode', 'style'] });
-            } catch (e) {
-              // Cross-origin
-            }
-          }
-        } catch (e) {
-          // Not in iframe
-        }
-
-        // Listen for postMessage from Circle.so (theme change event)
-        window.addEventListener('message', (event) => {
-          // Accept theme messages
-          if (event.data && typeof event.data === 'object') {
-            if (event.data.type === 'theme-change' || event.data.type === 'themeChange') {
-              setDarkMode(event.data.theme === 'dark' || event.data.dark === true);
-            }
-            if (event.data.theme === 'dark' || event.data.colorMode === 'dark') {
-              setDarkMode(true);
-            } else if (event.data.theme === 'light' || event.data.colorMode === 'light') {
-              setDarkMode(false);
-            }
-          }
-        });
-
-        // Fallback: Listen for system preference changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-          // Only use system preference if not embedded or can't detect Circle theme
-          try {
-            if (!window.parent || window.parent === window) {
-              setDarkMode(e.matches);
-            }
-          } catch (err) {
-            setDarkMode(e.matches);
-          }
-        });
-
-        // Re-check periodically in case Circle.so loads theme asynchronously
-        let checkCount = 0;
-        const intervalId = setInterval(() => {
-          setDarkMode(detectCircleTheme());
-          checkCount++;
-          if (checkCount >= 10) {
-            clearInterval(intervalId);
-          }
-        }, 500);
-      }
 
       // FAQ Accordion
       function initFAQ() {
@@ -1145,28 +967,8 @@
         });
       }
 
-      // TEMP: Theme switch button
-      function initThemeSwitch() {
-        const btn = document.getElementById('theme-switch');
-        if (!btn) return;
-
-        function updateButton() {
-          const isDark = document.documentElement.classList.contains('dark');
-          btn.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
-        }
-
-        btn.addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
-          updateButton();
-        });
-
-        updateButton();
-      }
-
       // Initialize everything
       function init() {
-        initDarkMode();
-        initThemeSwitch();
         initFAQ();
         initScrollReveal();
         initSmoothScroll();
