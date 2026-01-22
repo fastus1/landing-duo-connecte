@@ -198,8 +198,8 @@
 
 <body class="bg-surface-light dark:bg-surface-darker text-slate-800 dark:text-slate-100 font-body antialiased">
 
-  <!-- TEMP: Theme Switch -->
-  <button id="theme-switch" class="fixed top-4 right-4 z-50 bg-slate-800 dark:bg-white text-white dark:text-slate-800 px-4 py-2 rounded-lg shadow-lg font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">
+  <!-- TEMP: Theme Switch (display:none pour cacher) -->
+  <button id="theme-switch" class="hidden fixed top-4 right-4 z-50 bg-slate-800 dark:bg-white text-white dark:text-slate-800 px-4 py-2 rounded-lg shadow-lg font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">
     🌙 Dark
   </button>
 
@@ -937,21 +937,139 @@
     (function() {
       'use strict';
 
-      // Dark mode detection and toggle
+      // Dark mode detection for Circle.so embedding
       function initDarkMode() {
-        // Check system preference
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        }
-
-        // Listen for changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-          if (e.matches) {
+        function setDarkMode(isDark) {
+          if (isDark) {
             document.documentElement.classList.add('dark');
           } else {
             document.documentElement.classList.remove('dark');
           }
+        }
+
+        function detectCircleTheme() {
+          // Method 1: Check if embedded in Circle.so iframe
+          try {
+            // Circle.so adds data-theme attribute or dark class to their page
+            if (window.parent && window.parent !== window) {
+              // Check parent document (if same origin)
+              try {
+                const parentHtml = window.parent.document.documentElement;
+                const parentBody = window.parent.document.body;
+
+                // Check for dark class
+                if (parentHtml.classList.contains('dark') || parentBody.classList.contains('dark')) {
+                  return true;
+                }
+                // Check for data-theme attribute
+                if (parentHtml.getAttribute('data-theme') === 'dark' || parentBody.getAttribute('data-theme') === 'dark') {
+                  return true;
+                }
+                // Check for data-color-mode attribute (common in Circle.so)
+                if (parentHtml.getAttribute('data-color-mode') === 'dark' || parentBody.getAttribute('data-color-mode') === 'dark') {
+                  return true;
+                }
+                // Check computed background color of parent body
+                const parentBgColor = window.getComputedStyle(parentBody).backgroundColor;
+                if (parentBgColor) {
+                  // Parse RGB values
+                  const match = parentBgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                  if (match) {
+                    const r = parseInt(match[1]);
+                    const g = parseInt(match[2]);
+                    const b = parseInt(match[3]);
+                    // Calculate luminance - dark if below threshold
+                    const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+                    if (luminance < 128) {
+                      return true;
+                    }
+                  }
+                }
+                return false;
+              } catch (e) {
+                // Cross-origin - can't access parent
+              }
+            }
+          } catch (e) {
+            // Not in iframe or security error
+          }
+
+          // Method 2: Check URL parameters (Circle.so might pass theme via URL)
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('theme') === 'dark' || urlParams.get('dark') === 'true') {
+            return true;
+          }
+
+          // Method 3: Check for Circle.so specific elements or variables
+          if (typeof window.circleUser !== 'undefined' && window.circleUser.theme === 'dark') {
+            return true;
+          }
+
+          // Method 4: Fallback to system preference
+          return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+
+        // Initial detection
+        setDarkMode(detectCircleTheme());
+
+        // Watch for parent document changes (if accessible)
+        try {
+          if (window.parent && window.parent !== window) {
+            try {
+              const parentHtml = window.parent.document.documentElement;
+              const parentBody = window.parent.document.body;
+
+              // Observer for class and attribute changes on parent
+              const observer = new MutationObserver(() => {
+                setDarkMode(detectCircleTheme());
+              });
+
+              observer.observe(parentHtml, { attributes: true, attributeFilter: ['class', 'data-theme', 'data-color-mode'] });
+              observer.observe(parentBody, { attributes: true, attributeFilter: ['class', 'data-theme', 'data-color-mode', 'style'] });
+            } catch (e) {
+              // Cross-origin
+            }
+          }
+        } catch (e) {
+          // Not in iframe
+        }
+
+        // Listen for postMessage from Circle.so (theme change event)
+        window.addEventListener('message', (event) => {
+          // Accept theme messages
+          if (event.data && typeof event.data === 'object') {
+            if (event.data.type === 'theme-change' || event.data.type === 'themeChange') {
+              setDarkMode(event.data.theme === 'dark' || event.data.dark === true);
+            }
+            if (event.data.theme === 'dark' || event.data.colorMode === 'dark') {
+              setDarkMode(true);
+            } else if (event.data.theme === 'light' || event.data.colorMode === 'light') {
+              setDarkMode(false);
+            }
+          }
         });
+
+        // Fallback: Listen for system preference changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          // Only use system preference if not embedded or can't detect Circle theme
+          try {
+            if (!window.parent || window.parent === window) {
+              setDarkMode(e.matches);
+            }
+          } catch (err) {
+            setDarkMode(e.matches);
+          }
+        });
+
+        // Re-check periodically in case Circle.so loads theme asynchronously
+        let checkCount = 0;
+        const intervalId = setInterval(() => {
+          setDarkMode(detectCircleTheme());
+          checkCount++;
+          if (checkCount >= 10) {
+            clearInterval(intervalId);
+          }
+        }, 500);
       }
 
       // FAQ Accordion
