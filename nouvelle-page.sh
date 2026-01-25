@@ -22,8 +22,8 @@ fi
 # Copier le template
 cp -r _templates "$PROJECT_DIR"
 
-# Renommer page.html en index.html
-mv "$PROJECT_DIR/page.html" "$PROJECT_DIR/index.html"
+# Renommer page.html avec le nom du projet
+mv "$PROJECT_DIR/page.html" "$PROJECT_DIR/$PROJECT_NAME.html"
 
 # Remplacer les placeholders de base dans images.json
 sed -i "s/\[NOM_PROJET\]/$PROJECT_NAME/g" "$PROJECT_DIR/images.json"
@@ -37,14 +37,14 @@ echo "Projet '$PROJECT_NAME' cree avec succes!"
 echo ""
 echo "Structure:"
 echo "  pages/$PROJECT_NAME/"
-echo "  ├── index.html"
+echo "  ├── $PROJECT_NAME.html"
 echo "  ├── textes.md"
-echo "  ├── images.json    <- projet: $PROJECT_NAME, date: $TODAY"
+echo "  ├── images.json"
 echo "  └── images/"
 echo ""
 echo "Prochaines etapes:"
-echo "  1. Editer pages/$PROJECT_NAME/textes.md avec ton contenu"
-echo "  2. Ajouter tes images dans pages/$PROJECT_NAME/images/"
-echo "  3. Upload sur Cloudinary et mettre a jour images.json"
-echo "  4. Developper pages/$PROJECT_NAME/index.html"
+echo "  1. Editer textes.md avec le contenu"
+echo "  2. Ajouter images/ et upload sur Cloudinary"
+echo "  3. Developper $PROJECT_NAME.html"
+echo "  4. Demander a Claude d'ajouter une carte dans pages/index.html"
 echo ""

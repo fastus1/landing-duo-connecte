@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avancer Simplement - Landing Pages</title>
+
+  <!-- Fonts: Inter + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 28px;
+      color: #3085F5;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #94a3b8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover {
+      border-color: #3085F5;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px -12px rgba(48, 133, 245, 0.3);
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      font-size: 14px;
+      color: #3085F5;
+      font-weight: 500;
+    }
+
+    .card-link::after {
+      content: ' →';
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      color: #475569;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <p class="brand">Avancer Simplement</p>
+      <h1>Landing Pages</h1>
+    </header>
+
+    <div class="cards">
+
+      <!-- Duo-Connecte -->
+      <a href="duo-connecte/duo-connecte.html" class="card">
+        <h2 class="card-title">Duo-Connecte</h2>
+        <p class="card-description">
+          Un guide structure pour transformer les non-dits en connexions. Application pour les couples qui veulent mieux communiquer.
+        </p>
+        <span class="card-link">Voir la page</span>
+      </a>
+
+      <!-- Ajouter d'autres cartes ici -->
+
+    </div>
+
+    <footer>
+      <p>Pages de developpement local - Copier le HTML dans Circle.so</p>
+    </footer>
+  </div>
+</body>
+</html>
