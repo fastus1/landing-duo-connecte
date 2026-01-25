@@ -16,10 +16,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-bleu-320.png">
 
-  <!-- Fonts: Lora + Raleway + Montserrat -->
+  <!-- Fonts: Inter + Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:ital,wght@1,900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,8 +49,7 @@
             }
           },
           fontFamily: {
-            heading: ['Lora', 'Georgia', 'serif'],
-            body: ['Raleway', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
             brand: ['Montserrat', 'sans-serif'],
           },
           boxShadow: {
@@ -67,7 +66,7 @@
   <style>
     /* Base styles */
     html {
-      font-family: 'Raleway', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
     }
 
     /* Smooth transitions */
@@ -108,7 +107,7 @@
   </style>
 </head>
 
-<body class="bg-slate-900 text-slate-100 font-body antialiased" style="background-color: #0f172a !important;">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased" style="background-color: #0f172a !important;">
 
   <!-- ==================== HERO ==================== -->
   <section class="relative min-h-screen flex items-center overflow-hidden">
@@ -126,7 +125,7 @@
         </div>
 
         <!-- Main Title -->
-        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
           [TITRE_PRODUIT]
         </h1>
 
