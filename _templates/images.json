@@ -1,0 +1,41 @@
+{
+  "project": "[NOM_PROJET]",
+  "cloudinary_folder": "[NOM_PROJET]",
+  "updated": "[DATE]",
+  "images": {
+    "hero-background": {
+      "local": "images/hero-background.jpg",
+      "url": "",
+      "alt": "[DESCRIPTION_ALT]",
+      "usage": ["hero section"]
+    },
+    "mockup-smartphone": {
+      "local": "images/mockup-smartphone.png",
+      "url": "",
+      "alt": "Application [NOM_PRODUIT] sur smartphone",
+      "usage": ["hero", "multi-appareils"]
+    },
+    "mockup-tablette": {
+      "local": "images/mockup-tablette.png",
+      "url": "",
+      "alt": "Application [NOM_PRODUIT] sur tablette",
+      "usage": ["multi-appareils"]
+    },
+    "mockup-ordinateur": {
+      "local": "images/mockup-ordinateur.png",
+      "url": "",
+      "alt": "Application [NOM_PRODUIT] sur ordinateur",
+      "usage": ["multi-appareils"]
+    }
+  },
+  "shared": {
+    "logo-blanc": {
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-blanc-320.png",
+      "alt": "Logo Avancer Simplement - trois fleches blanches"
+    },
+    "logo-bleu": {
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-bleu-320.png",
+      "alt": "Logo Avancer Simplement - trois fleches bleues"
+    }
+  }
+}
