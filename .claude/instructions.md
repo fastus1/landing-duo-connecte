@@ -6,12 +6,18 @@ Ce projet est une **usine a landing pages standalone** pour les produits Avancer
 
 Chaque page HTML est **copiee-collee dans Circle.so** (bloc HTML du Site Builder). Les pages ne sont PAS servies comme un site statique traditionnel - elles sont integrees individuellement dans Circle.
 
+## Outils disponibles
+
+- **MCP Server Cloudinary** : Gestion des images (upload, recherche, transformation)
+- **Script nouvelle-page.sh** : Creation de nouvelles pages
+
 ## Structure du projet
 
 ```
 avancer-simplement-pages/
 ├── pages/
 │   ├── index.html              ← Page d'accueil avec cartes vers les pages
+│   ├── style-guide.html        ← Reference visuelle du design system
 │   ├── duo-connecte/
 │   │   ├── duo-connecte.html   ← HTML standalone (copier dans Circle)
 │   │   ├── textes.md           ← Tous les textes de la page
@@ -22,6 +28,21 @@ avancer-simplement-pages/
 ├── _templates/                  ← Templates pour nouvelles pages
 ├── docs/                        ← Guide design system (4 fichiers)
 └── nouvelle-page.sh             ← Script creation nouvelle page
+```
+
+## Structure Cloudinary
+
+```
+avancer-simplement/
+├── _shared/
+│   └── logos/
+│       ├── logo-blanc-320.png  ← Logo blanc (theme sombre)
+│       └── logo-bleu-320.png   ← Logo bleu (favicon)
+├── duo-connecte/               ← Images specifiques au projet
+│   ├── hero-couple.jpg
+│   ├── mockup-smartphone-sombre.png
+│   └── ...
+└── [autre-projet]/
 ```
 
 ## Regles importantes
@@ -35,21 +56,28 @@ avancer-simplement-pages/
 ### Design System
 - **Polices** : Inter + Montserrat (branding)
 - **Couleur principale** : #3085F5 (theme sombre uniquement)
-- Voir `docs/` pour le guide complet
+- **Reference visuelle** : `pages/style-guide.html`
+- **Documentation complete** : `docs/`
 
 ### Images
-- Upload sur Cloudinary avant utilisation
+- Upload sur Cloudinary dans `avancer-simplement/[nom-projet]/`
+- Utiliser le MCP Server Cloudinary pour upload et gestion
 - Mettre a jour `images.json` avec les URLs
-- Les logos partages sont deja sur Cloudinary (voir images.json > shared)
+- Logos partages : `avancer-simplement/_shared/logos/`
 
 ## Workflow nouvelle page
 
-1. Executer `./nouvelle-page.sh nom-du-projet`
-2. Remplir `textes.md` avec le contenu
-3. Ajouter images dans `images/`, upload sur Cloudinary
-4. Developper le HTML
-5. **Demander a Claude d'ajouter une carte dans `pages/index.html`**
-6. Copier le HTML dans Circle.so
+```bash
+./nouvelle-page.sh nom-du-projet
+```
+
+1. Executer le script ci-dessus
+2. Creer le dossier Cloudinary : `avancer-simplement/nom-du-projet`
+3. Remplir `textes.md` avec le contenu
+4. Ajouter images dans `images/`, upload sur Cloudinary via MCP
+5. Developper le HTML
+6. **Demander a Claude d'ajouter une carte dans `pages/index.html`**
+7. Copier le HTML dans Circle.so
 
 ## Page d'accueil (pages/index.html)
 
