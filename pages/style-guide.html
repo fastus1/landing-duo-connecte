@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide | Avancer Simplement</title>
+
+  <!-- Fonts: Inter + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EBF4FF',
+              100: '#D6E8FF',
+              200: '#A8D1FF',
+              300: '#70B5FF',
+              400: '#3085F5',
+              500: '#074491',
+              600: '#053666',
+              700: '#042952',
+              800: '#031C3D',
+              900: '#020F29',
+            },
+            surface: {
+              light: '#E2E8F0',
+              DEFAULT: '#FFFFFF',
+              dark: '#1E293B',
+              darker: '#0F172A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            brand: ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+            'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 2px 10px -2px rgba(0, 0, 0, 0.04)',
+            'soft-xl': '0 20px 50px -12px rgba(0, 0, 0, 0.15)',
+            'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .card-soft {
+      background: #1E293B;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.4),
+                  0 2px 8px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #3085F5;
+      margin-bottom: 1rem;
+    }
+
+    .component-box {
+      background: #1E293B;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .color-swatch {
+      width: 100%;
+      height: 60px;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased" style="background-color: #0f172a !important;">
+
+  <!-- Header -->
+  <header class="py-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4">
+        <img
+          src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768749285/avancer-simplement/_shared/logos/logo-blanc-320.png"
+          alt="Logo Avancer Simplement"
+          class="w-12 h-auto"
+        >
+        <div>
+          <h1 class="text-2xl font-bold text-white">Style Guide</h1>
+          <p class="text-slate-400 text-sm">Design System - Avancer Simplement</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- ==================== BRANDING ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Branding</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Logo & Nom</h3>
+
+        <div class="max-w-sm">
+          <div class="text-center p-8 bg-slate-800 rounded-xl">
+            <img
+              src="https://res.cloudinary.com/dxhn08di4/image/upload/v1768749285/avancer-simplement/_shared/logos/logo-blanc-320.png"
+              alt="Logo blanc"
+              class="w-24 mx-auto mb-4"
+            >
+            <p class="text-sm text-slate-400">Logo blanc (theme sombre)</p>
+            <code class="text-xs text-slate-500 block mt-2">_shared/logos/logo-blanc-320.png</code>
+          </div>
+        </div>
+
+        <!-- Nom de marque -->
+        <div class="mt-8 p-6 bg-slate-800 rounded-xl">
+          <p class="font-brand font-black italic text-white text-xl tracking-tight uppercase mb-2">AVANCER SIMPLEMENT</p>
+          <p class="text-sm text-slate-400">Police: Montserrat Black Italic, uppercase</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TYPOGRAPHIE ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Typographie</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Polices</h3>
+
+        <div class="space-y-6">
+          <div class="p-4 bg-slate-800 rounded-lg">
+            <p class="font-sans text-white mb-1">Inter - Texte principal</p>
+            <p class="text-sm text-slate-400">font-family: 'Inter', system-ui, sans-serif</p>
+          </div>
+          <div class="p-4 bg-slate-800 rounded-lg">
+            <p class="font-brand font-black italic text-white mb-1">Montserrat Black Italic - Branding</p>
+            <p class="text-sm text-slate-400">font-family: 'Montserrat', sans-serif</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Titres</h3>
+
+        <div class="space-y-6">
+          <div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">Titre H1 - Hero</h1>
+            <code class="text-xs text-slate-500">text-4xl sm:text-5xl lg:text-6xl font-bold</code>
+          </div>
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-2">Titre H2 - Section</h2>
+            <code class="text-xs text-slate-500">text-3xl sm:text-4xl font-bold</code>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-2">Titre H3 - Sous-section</h3>
+            <code class="text-xs text-slate-500">text-2xl font-bold</code>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-2">Titre H4 - Card</h4>
+            <code class="text-xs text-slate-500">text-lg font-semibold</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Texte</h3>
+
+        <div class="space-y-6">
+          <div>
+            <p class="text-xl sm:text-2xl text-white/90 font-light mb-2">Tagline - Texte d'accroche</p>
+            <code class="text-xs text-slate-500">text-xl sm:text-2xl text-white/90 font-light</code>
+          </div>
+          <div>
+            <p class="text-lg text-slate-300 mb-2">Sous-titre de section</p>
+            <code class="text-xs text-slate-500">text-lg text-slate-300</code>
+          </div>
+          <div>
+            <p class="text-slate-300 mb-2">Paragraphe standard - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <code class="text-xs text-slate-500">text-slate-300</code>
+          </div>
+          <div>
+            <p class="text-sm text-slate-400 mb-2">Texte secondaire / Caption</p>
+            <code class="text-xs text-slate-500">text-sm text-slate-400</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COULEURS ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Couleurs</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Palette principale</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <div class="color-swatch" style="background: #3085F5;"></div>
+            <p class="text-sm font-medium text-white">Brand Primary</p>
+            <p class="text-xs text-slate-400">#3085F5</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #70B5FF;"></div>
+            <p class="text-sm font-medium text-white">Brand Light</p>
+            <p class="text-xs text-slate-400">#70B5FF</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #074491;"></div>
+            <p class="text-sm font-medium text-white">Brand Dark</p>
+            <p class="text-xs text-slate-400">#074491</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #FFFFFF;"></div>
+            <p class="text-sm font-medium text-white">White</p>
+            <p class="text-xs text-slate-400">#FFFFFF</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Surfaces (Theme sombre)</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <div class="color-swatch" style="background: #0F172A;"></div>
+            <p class="text-sm font-medium text-white">Background</p>
+            <p class="text-xs text-slate-400">#0F172A (slate-900)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #1E293B;"></div>
+            <p class="text-sm font-medium text-white">Card / Surface</p>
+            <p class="text-xs text-slate-400">#1E293B (slate-800)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #334155;"></div>
+            <p class="text-sm font-medium text-white">Border</p>
+            <p class="text-xs text-slate-400">#334155 (slate-700)</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #475569;"></div>
+            <p class="text-sm font-medium text-white">Muted</p>
+            <p class="text-xs text-slate-400">#475569 (slate-600)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Couleurs d'accent</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div>
+            <div class="color-swatch" style="background: #e05a03;"></div>
+            <p class="text-sm font-medium text-white">Orange</p>
+            <p class="text-xs text-slate-400">#e05a03</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #009a2a;"></div>
+            <p class="text-sm font-medium text-white">Green</p>
+            <p class="text-xs text-slate-400">#009a2a</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #ffb200;"></div>
+            <p class="text-sm font-medium text-white">Yellow</p>
+            <p class="text-xs text-slate-400">#ffb200</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #db0e00;"></div>
+            <p class="text-sm font-medium text-white">Red</p>
+            <p class="text-xs text-slate-400">#db0e00</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #641892;"></div>
+            <p class="text-sm font-medium text-white">Purple</p>
+            <p class="text-xs text-slate-400">#641892</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #a82360;"></div>
+            <p class="text-sm font-medium text-white">Magenta</p>
+            <p class="text-xs text-slate-400">#a82360</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Etats de validation</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <div class="color-swatch" style="background: #009a2a;"></div>
+            <p class="text-sm font-medium text-white">Success</p>
+            <p class="text-xs text-slate-400">#009a2a</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #db0e00;"></div>
+            <p class="text-sm font-medium text-white">Error</p>
+            <p class="text-xs text-slate-400">#db0e00</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #ffb200;"></div>
+            <p class="text-sm font-medium text-white">Warning</p>
+            <p class="text-xs text-slate-400">#ffb200</p>
+          </div>
+          <div>
+            <div class="color-swatch" style="background: #2563EB;"></div>
+            <p class="text-sm font-medium text-white">Info</p>
+            <p class="text-xs text-slate-400">#2563EB</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BOUTONS ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Boutons</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Styles de boutons</h3>
+
+        <div class="space-y-8">
+          <!-- Primary -->
+          <div>
+            <p class="text-sm text-slate-400 mb-3">Primaire (CTA principal)</p>
+            <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-200 cursor-pointer shadow-soft-lg hover:shadow-soft-xl hover:-translate-y-0.5">
+              Bouton primaire
+            </a>
+            <code class="block text-xs text-slate-500 mt-3">bg-white text-blue-700 font-semibold rounded-xl shadow-soft-lg</code>
+          </div>
+
+          <!-- Secondary -->
+          <div>
+            <p class="text-sm text-slate-400 mb-3">Secondaire (CTA alternatif)</p>
+            <a href="#" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-200 cursor-pointer">
+              Bouton secondaire
+            </a>
+            <code class="block text-xs text-slate-500 mt-3">border-2 border-white/30 text-white font-semibold rounded-xl</code>
+          </div>
+
+          <!-- Blue filled -->
+          <div>
+            <p class="text-sm text-slate-400 mb-3">Bleu (mid-page CTA)</p>
+            <a href="#" class="inline-flex items-center justify-center px-8 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-xl transition-all duration-200 cursor-pointer hover:-translate-y-0.5">
+              Acheter maintenant
+            </a>
+            <code class="block text-xs text-slate-500 mt-3">bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-xl</code>
+          </div>
+
+          <!-- Link style -->
+          <div>
+            <p class="text-sm text-slate-400 mb-3">Lien avec fleche</p>
+            <a href="#" class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors cursor-pointer">
+              En savoir plus
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <code class="block text-xs text-slate-500 mt-3">text-blue-400 font-semibold hover:text-blue-300</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARDS ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Cards</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Card standard (.card-soft)</h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Card simple -->
+          <div class="card-soft rounded-2xl p-6">
+            <h4 class="font-sans text-lg font-semibold text-white mb-2">Titre de la card</h4>
+            <p class="text-slate-300">Contenu de la card avec du texte descriptif.</p>
+          </div>
+
+          <!-- Card avec icone -->
+          <div class="card-soft rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-200 cursor-pointer">
+            <div class="w-14 h-14 rounded-xl bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h4 class="font-sans text-lg font-semibold text-white mb-2">Card avec icone</h4>
+            <p class="text-sm text-slate-400">Description courte</p>
+          </div>
+        </div>
+
+        <code class="block text-xs text-slate-500 mt-4">card-soft rounded-2xl p-6</code>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Card highlight (bordure bleue)</h3>
+
+        <div class="max-w-md">
+          <div class="card-soft rounded-2xl p-6 border-2 border-blue-500/20">
+            <h4 class="font-sans text-lg font-semibold text-white mb-2">Card mise en avant</h4>
+            <p class="text-slate-300">Utilisee pour mettre en valeur un element important.</p>
+          </div>
+        </div>
+
+        <code class="block text-xs text-slate-500 mt-4">card-soft rounded-2xl border-2 border-blue-500/20</code>
+      </div>
+    </section>
+
+    <!-- ==================== ICONES ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Icones & Badges</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Icones dans cercles</h3>
+
+        <div class="flex flex-wrap gap-6">
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-xl bg-blue-900/30 flex items-center justify-center mb-2">
+              <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-slate-400">blue-900/30</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-xl bg-emerald-900/30 flex items-center justify-center mb-2">
+              <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <p class="text-xs text-slate-400">emerald-900/30</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-xl bg-amber-900/30 flex items-center justify-center mb-2">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-slate-400">amber-900/30</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-xl bg-purple-900/30 flex items-center justify-center mb-2">
+              <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <p class="text-xs text-slate-400">purple-900/30</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Badges & Steps</h3>
+
+        <div class="flex flex-wrap gap-6 items-center">
+          <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold">
+            1
+          </div>
+          <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold">
+            2
+          </div>
+          <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold">
+            3
+          </div>
+          <div class="bg-blue-500 text-white text-sm font-medium px-4 py-1 rounded-xl">
+            Badge
+          </div>
+        </div>
+
+        <code class="block text-xs text-slate-500 mt-4">w-12 h-12 rounded-full bg-blue-500 text-white font-bold</code>
+      </div>
+    </section>
+
+    <!-- ==================== LISTES ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Listes</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Liste avec checkmarks</h3>
+
+        <ul class="space-y-4 max-w-md">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-slate-300">Element de liste positif</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-slate-300">Autre element positif</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Liste avec puces</h3>
+
+        <ul class="space-y-4 max-w-md">
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
+            <span class="text-slate-300">Element de liste neutre</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2.5 flex-shrink-0"></span>
+            <span class="text-slate-300">Autre element neutre</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== ESPACEMENT ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Espacement</h2>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Espacements standards (Tailwind)</h3>
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-4 h-4 bg-blue-500"></div>
+            <span class="text-slate-300">16px (p-4, gap-4, mb-4)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-6 h-6 bg-blue-500"></div>
+            <span class="text-slate-300">24px (p-6, gap-6, mb-6)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 bg-blue-500"></div>
+            <span class="text-slate-300">32px (p-8, gap-8, mb-8)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-blue-500"></div>
+            <span class="text-slate-300">48px (p-12, gap-12, mb-12)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-box">
+        <h3 class="text-lg font-semibold text-white mb-6">Sections</h3>
+
+        <div class="space-y-2 text-slate-300">
+          <p><code class="text-blue-400">py-20 lg:py-28</code> - Padding vertical des sections</p>
+          <p><code class="text-blue-400">max-w-7xl mx-auto px-4 sm:px-6 lg:px-8</code> - Container standard</p>
+          <p><code class="text-blue-400">mb-16</code> - Espace apres titre de section</p>
+          <p><code class="text-blue-400">gap-8 lg:gap-12</code> - Espace entre cards</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER REFERENCE ==================== -->
+    <section class="mb-16">
+      <h2 class="section-title">Footer</h2>
+
+      <div class="component-box">
+        <p class="text-slate-300 mb-4">Le footer standard est inclus dans le template. Il contient :</p>
+        <ul class="space-y-2 text-slate-400">
+          <li>- Logo + nom de marque</li>
+          <li>- Liens : Contact, Politique de confidentialite, Conditions d'utilisation</li>
+          <li>- Copyright</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-800 text-center">
+    <p class="text-sm text-slate-500">
+      Style Guide - Derniere mise a jour : Janvier 2026
+    </p>
+  </footer>
+
+</body>
+</html>
