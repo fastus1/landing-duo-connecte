@@ -19,7 +19,7 @@ Documentation pour generer des landing pages HTML optimisees pour Circle.so.
 - Mobile-first responsive
 - IIFE pour JavaScript
 - CSS Variables
-- Mode sombre
+- Theme sombre uniquement
 - Accessibilite WCAG AA
 
 ### JAMAIS
@@ -32,7 +32,7 @@ Documentation pour generer des landing pages HTML optimisees pour Circle.so.
 
 ### DESIGN SYSTEM
 - **Polices** : Inter + Montserrat
-- **Couleurs** : #074491 (clair) / #3085F5 (sombre)
+- **Couleur principale** : #3085F5 (theme sombre)
 - **Spacing** : 16, 24, 32, 48px
 - **Branding** : "AVANCER SIMPLEMENT"
 

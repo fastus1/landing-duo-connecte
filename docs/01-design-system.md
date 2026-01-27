@@ -5,8 +5,7 @@
 ### Branding principal
 
 **Logo**
-- Mode clair : Logo bleu
-- Mode sombre : Logo blanc
+- Logo blanc sur fond sombre
 - Format : PNG 320px de large recommande
 
 **Nom de la communaute : "AVANCER SIMPLEMENT"**
@@ -89,55 +88,28 @@ color: var(--muted-foreground);
 
 ## Palette de couleurs
 
-### Couleurs principales
+### Couleurs principales (theme sombre)
 
-**Mode clair**
 ```css
 :root {
   /* Brand */
-  --brand-primary: #074491;
-  --brand-link: #2563EB;
+  --brand-primary: #3085F5;
+  --brand-link: #539DFF;
 
   /* UI */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F0F3F5;
-  --text-primary: #000000;
-  --text-secondary: #545861;
+  --bg-primary: #2B2E33;
+  --bg-secondary: #42464D;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E4E7EB;
 
   /* Boutons */
-  --btn-primary-bg: #074491;
-  --btn-primary-text: #FFFFFF;
-  --btn-primary-hover: #053666;
+  --btn-primary-bg: #3085F5;
+  --btn-primary-text: #202226;
+  --btn-primary-hover: #539DFF;
 
   /* Etats */
-  --border-default: #E5E7EB;
-  --border-focus: #074491;
-}
-```
-
-**Mode sombre**
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Brand */
-    --brand-primary: #3085F5;
-    --brand-link: #539DFF;
-
-    /* UI */
-    --bg-primary: #2B2E33;
-    --bg-secondary: #42464D;
-    --text-primary: #FFFFFF;
-    --text-secondary: #E4E7EB;
-
-    /* Boutons */
-    --btn-primary-bg: #3085F5;
-    --btn-primary-text: #202226;
-    --btn-primary-hover: #539DFF;
-
-    /* Etats */
-    --border-default: #42464D;
-    --border-focus: #3085F5;
-  }
+  --border-default: #42464D;
+  --border-focus: #3085F5;
 }
 ```
 

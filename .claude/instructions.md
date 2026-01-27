@@ -34,7 +34,7 @@ avancer-simplement-pages/
 
 ### Design System
 - **Polices** : Inter + Montserrat (branding)
-- **Couleurs** : #074491 (clair) / #3085F5 (sombre)
+- **Couleur principale** : #3085F5 (theme sombre uniquement)
 - Voir `docs/` pour le guide complet
 
 ### Images

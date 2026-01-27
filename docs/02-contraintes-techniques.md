@@ -203,16 +203,16 @@ Doit fonctionner sur :
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-brand: 'Montserrat', sans-serif;
 
-    /* Couleurs - Mode clair */
-    --brand-primary: #074491;
-    --brand-link: #2563EB;
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F0F3F5;
-    --text-primary: #000000;
-    --text-secondary: #545861;
-    --btn-primary-bg: #074491;
-    --btn-primary-text: #FFFFFF;
-    --btn-primary-hover: #053666;
+    /* Couleurs - Theme sombre */
+    --brand-primary: #3085F5;
+    --brand-link: #539DFF;
+    --bg-primary: #2B2E33;
+    --bg-secondary: #42464D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E4E7EB;
+    --btn-primary-bg: #3085F5;
+    --btn-primary-text: #202226;
+    --btn-primary-hover: #539DFF;
 
     /* Espacement */
     --spacing-4: 16px;
@@ -222,21 +222,6 @@ Doit fonctionner sur :
 
     /* Transitions */
     --transition-base: 200ms ease;
-  }
-
-  /* ===== MODE SOMBRE ===== */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --brand-primary: #3085F5;
-      --brand-link: #539DFF;
-      --bg-primary: #2B2E33;
-      --bg-secondary: #42464D;
-      --text-primary: #FFFFFF;
-      --text-secondary: #E4E7EB;
-      --btn-primary-bg: #3085F5;
-      --btn-primary-text: #202226;
-      --btn-primary-hover: #539DFF;
-    }
   }
 
   /* ===== RESET ===== */

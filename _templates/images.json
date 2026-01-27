@@ -1,15 +1,11 @@
 {
   "project": "[NOM_PROJET]",
-  "cloudinary_folder": "[NOM_PROJET]",
+  "cloudinary_folder": "avancer-simplement/[NOM_PROJET]",
   "updated": "[DATE]",
   "images": {},
   "shared": {
-    "logo-blanc": {
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-blanc-320.png",
-      "alt": "Logo Avancer Simplement"
-    },
-    "logo-bleu": {
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-bleu-320.png",
+    "logo": {
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768749285/avancer-simplement/_shared/logos/logo-blanc-320.png",
       "alt": "Logo Avancer Simplement"
     }
   }

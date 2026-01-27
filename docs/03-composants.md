@@ -33,7 +33,7 @@ Code copier-coller pour les sections courantes.
 
 <style>
   .mlp-hero {
-    background: linear-gradient(135deg, #074491 0%, #2563EB 100%);
+    background: linear-gradient(135deg, #3085F5 0%, #539DFF 100%);
     padding: 80px 20px;
     text-align: center;
     position: relative;

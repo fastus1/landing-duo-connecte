@@ -1,41 +1,37 @@
 {
   "project": "duo-connecte",
-  "cloudinary_folder": "duo-connecte",
-  "updated": "2026-01-25",
+  "cloudinary_folder": "avancer-simplement/duo-connecte",
+  "updated": "2026-01-27",
   "images": {
     "hero-couple": {
       "local": "images/hero-couple.jpg",
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769350/duo-connecte/hero-couple.jpg",
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769350/avancer-simplement/duo-connecte/hero-couple.jpg",
       "alt": "Couple en conversation bienveillante",
       "usage": ["hero background"]
     },
     "mockup-smartphone-sombre": {
       "local": "images/mockup-smartphone-sombre.png",
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769341/duo-connecte/mockup-smartphone-sombre.png",
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769341/avancer-simplement/duo-connecte/mockup-smartphone-sombre.png",
       "alt": "Application Duo-Connecte sur smartphone",
       "usage": ["hero", "multi-appareils"]
     },
     "mockup-tablette-sombre": {
       "local": "images/mockup-tablette-sombre.png",
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769348/duo-connecte/mockup-tablette-sombre.png",
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769348/avancer-simplement/duo-connecte/mockup-tablette-sombre.png",
       "alt": "Application Duo-Connecte sur tablette",
       "usage": ["multi-appareils"]
     },
     "mockup-ordinateur-sombre": {
       "local": "images/mockup-ordinateur-sombre.png",
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769349/duo-connecte/mockup-ordinateur-sombre.png",
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769349/avancer-simplement/duo-connecte/mockup-ordinateur-sombre.png",
       "alt": "Application Duo-Connecte sur ordinateur",
       "usage": ["multi-appareils"]
     }
   },
   "shared": {
-    "logo-blanc": {
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-blanc-320.png",
-      "alt": "Logo Avancer Simplement - trois fleches blanches"
-    },
-    "logo-bleu": {
-      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/duo-connecte/logo-bleu-320.png",
-      "alt": "Logo Avancer Simplement - trois fleches bleues"
+    "logo": {
+      "url": "https://res.cloudinary.com/dxhn08di4/image/upload/v1768769339/avancer-simplement/duo-connecte/logo-blanc-320.png",
+      "alt": "Logo Avancer Simplement"
     }
   }
 }

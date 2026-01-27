@@ -11,7 +11,7 @@ Avant de fournir le code, VERIFIE :
 [ ] Import polices : Inter + Montserrat (si branding)
 [ ] Toutes les classes prefixees (mlp-)
 [ ] CSS Variables definies (couleurs, espacements)
-[ ] Mode sombre avec @media (prefers-color-scheme: dark)
+[ ] Theme sombre par defaut
 [ ] Responsive mobile-first (768px, 1024px)
 [ ] JavaScript dans IIFE
 [ ] Support window.circleUser
@@ -37,7 +37,7 @@ STRUCTURE :
 
 DESIGN SYSTEM :
 - Polices : Inter (contenu) + Montserrat Black Italic (branding)
-- Couleurs : #074491 (light) / #3085F5 (dark)
+- Couleurs : #3085F5 (theme sombre)
 - Espacement Tailwind (16px, 24px, 32px, 48px)
 - Boutons : Arrondis 8px, min 48px hauteur
 - Cards : Border-radius 12px, shadow subtile
@@ -90,7 +90,7 @@ Toujours inclure une section CONFIG modifiable :
 
   /* MODIFIABLE : Couleurs principales */
   :root {
-    --brand-primary: #074491;
+    --brand-primary: #3085F5;
   }
 </style>
 
@@ -112,7 +112,7 @@ Toujours inclure une section CONFIG modifiable :
 [ ] Couleurs conformes au design system
 [ ] Branding "AVANCER SIMPLEMENT" correct
 [ ] Espacement coherent (Tailwind units)
-[ ] Mode sombre fonctionne
+[ ] Theme sombre applique correctement
 ```
 
 **Responsive**
@@ -223,7 +223,7 @@ Toujours inclure une section CONFIG modifiable :
 - Mobile-first responsive
 - IIFE pour JavaScript
 - CSS Variables
-- Mode sombre
+- Theme sombre uniquement
 - Accessibilite WCAG AA
 
 ### JAMAIS
@@ -236,6 +236,6 @@ Toujours inclure une section CONFIG modifiable :
 
 ### DESIGN SYSTEM
 - Polices : Inter + Montserrat
-- Couleurs : #074491 / #3085F5
+- Couleur principale : #3085F5
 - Spacing : 16, 24, 32, 48px
 - Branding : "AVANCER SIMPLEMENT"
