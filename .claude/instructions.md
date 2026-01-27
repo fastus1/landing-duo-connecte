@@ -84,6 +84,34 @@ avancer-simplement/
 La page d'accueil contient des **cartes** vers chaque landing page.
 Quand une nouvelle page est creee, demander a Claude d'ajouter manuellement une carte.
 
+## Deploiement
+
+- **Portainer** se met a jour automatiquement toutes les minutes (pas besoin de rappeler)
+- Apres un push, les changements sont deployes automatiquement
+
+### REGLES CRITIQUES - NE JAMAIS ENFREINDRE
+
+1. **JAMAIS de commandes Docker dans le terminal** :
+   - PAS de `docker compose up/down`
+   - PAS de `docker build`
+   - PAS de `docker run/stop/rm`
+   - Portainer gere TOUT. Ces commandes cassent le lien Portainer ↔ stack.
+
+2. **Tout passe par GitHub** :
+   - Portainer pull depuis GitHub, PAS les fichiers locaux
+   - Un changement local n'existe pas tant qu'il n'est pas `git push`
+   - Workflow : modifier → commit → push → Portainer auto-update (ou Pull and redeploy)
+
+3. **Gestion des stacks = Portainer seulement** :
+   - Creer/supprimer stacks → Portainer UI
+   - Start/stop/restart → Portainer UI
+   - Voir les logs → Portainer UI
+
+4. **Si ca ne marche pas apres push** :
+   - Verifier le cache navigateur (Ctrl+Shift+R)
+   - Dans Portainer : Pull and redeploy
+   - JAMAIS toucher au terminal pour Docker
+
 ## Circle.so
 
 - Le HTML est colle dans un **bloc HTML** du Site Builder
